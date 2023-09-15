@@ -93,7 +93,7 @@ G2B #(
 
 // Full/Almost-Full - Empty/Almost-Empty
 assign Full  = ({!p_wr_b[POINTER_WIDTH],p_wr_b[POINTER_WIDTH-1:0]} == sync_p_rd_b)? 1'b1:1'b0;
-assign Empty = ({p_wr_b == sync_p_rd_b})? 1'b1:1'b0;
+assign Empty = ({p_rd_b == sync_p_wr_b})? 1'b1:1'b0;
 
 reg [FIFO_WIDTH-1:0] FIFO_MEM [FIFO_DEPTH-1:0];
 
